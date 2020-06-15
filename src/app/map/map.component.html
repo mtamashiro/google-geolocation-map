@@ -1,0 +1,21 @@
+<div class="form-group">
+  <label>Partida</label>
+  <input [(ngModel)]="origin_street" type="text" class="form-control" placeholder="">
+</div>
+
+<div class="form-group">
+  <label>Destino</label>
+  <input [(ngModel)]="destination_street" type="text" class="form-control" placeholder="">
+</div>
+<button type="submit" class="btn btn-primary" (click)="getDirection()">GERAR ROTA</button>
+<br>
+Geolocalização Partida: {{geoloc_origin}}<br>
+Geolocalização Chegada: {{geoloc_destination}}
+
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-direction
+    [origin]="origin"
+    [destination]="destination"
+  >
+  </agm-direction>
+</agm-map>
